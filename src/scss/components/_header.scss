@@ -17,10 +17,9 @@
   }
 }
 
-
 .header{
-  background: linear-gradient(0deg, #0088FE, #0088FE), linear-gradient(0deg, #0185FF -2.38%, #19AAF5 92.71%);
-
+  position: relative;
+  z-index: 1;
   .navbar{
     color: #fff;
     margin-bottom: 0;
@@ -38,6 +37,11 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+}
+
+.header-wrapper{
+  background: linear-gradient(0deg, #0088FE, #0088FE), linear-gradient(0deg, #0185FF -2.38%, #19AAF5 92.71%);
 
 }
 

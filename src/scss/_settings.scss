@@ -86,8 +86,11 @@ a {
 
 .container {
   margin:  auto;
-  padding: 20px var(--container-offset);
+  padding:  var(--container-offset);
   max-width: var(--container-width);
+}
+.container-fluid{
+  padding: 0;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
