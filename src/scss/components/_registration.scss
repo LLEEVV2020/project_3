@@ -1,0 +1,72 @@
+.registration {
+  background: #FFF41B;
+  .btn{
+    padding: 11px 30px;
+  }
+  .container{
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
+}
+
+.registration__inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  max-width: 810px;
+  margin: 0 auto;
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+  }
+  &::before{
+    background-image: url(../img/svg/registration-left.svg);
+  }
+  &::after{
+    background-image: url(../img/svg/registration-right.svg);
+  }
+
+
+}
+.registration__img{
+
+  position: relative;
+  height: 1px;
+  max-width: 91px;
+  width: 100%;
+  margin-right: 20px;
+  margin-top: -13px;
+  img {
+    max-width: 91px;
+    height: 65px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.registration__text{
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.registration__day{
+  margin-right: 14px;
+}
+.registration__time{
+  margin-right: 40px;
+}
+.registration__day,
+.registration__time{
+  font-size: 26px;
+  font-weight: 700;
+}
