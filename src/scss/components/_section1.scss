@@ -1,0 +1,82 @@
+.section1{
+  padding-bottom: 200px;
+  .btn{
+    background-color:  #0077FF;
+    border-radius: 67px;
+    padding: 8px 19px;
+  }
+  .btn::after{
+    content: "";
+    background-image: url(../img/svg/vk-simvol.svg);
+    width: 16px;
+    height: 9px;
+    display: inline-block;
+    margin-left: 4px;
+  }
+
+  .block-left{
+    font-size: 48px;
+    line-height: 1.085;
+    letter-spacing: -0.01em;
+    span{
+      color: #0088FE;
+    }
+  }
+
+  .block-right{
+    color: #6C93B3;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+}
+
+.section1__text{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 90px;
+}
+
+.section1__item{
+
+
+
+  color: #fff;
+
+  margin-left: 15px;
+  &:first-child .section1__item-img{
+    background: #0088FE;
+  }
+}
+.section1__item-img{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+
+  width: 254px;
+  height: 254px;
+}
+.section1__item-head{
+  font-size: 112px;
+  line-height: 1.1;
+}
+.section1__item-descr{
+  font-size: 20px;
+  line-height: 26px;
+}
+.section1__item-text{
+  display: flex;
+  justify-content: center;
+}
+.section1__item-img{
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+

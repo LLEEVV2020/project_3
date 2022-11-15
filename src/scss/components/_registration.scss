@@ -2,7 +2,9 @@
   background: #FFF41B;
   .btn{
     padding: 11px 30px;
+
   }
+
   .container{
     padding-top: 0;
     padding-bottom: 0;
@@ -14,8 +16,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   position: relative;
   max-width: 810px;
   margin: 0 auto;
@@ -25,12 +27,21 @@
     content: "";
     position: absolute;
     top: 0;
+    height: 100%;
+    background-size: cover;
   }
   &::before{
     background-image: url(../img/svg/registration-left.svg);
+    width: 293px;
+    left: 0;
+    transform: translateX(-100%);
   }
   &::after{
     background-image: url(../img/svg/registration-right.svg);
+    right: 0;
+    transform: translateX(100%);
+    width: 323px;
+
   }
 
 
@@ -42,7 +53,7 @@
   max-width: 91px;
   width: 100%;
   margin-right: 20px;
-  margin-top: -13px;
+  margin-top: -11px;
   img {
     max-width: 91px;
     height: 65px;

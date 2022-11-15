@@ -6,6 +6,7 @@ body{
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-weight: 600;
+  color: #0B212F;
 }
 
 *,
@@ -127,3 +128,13 @@ a {
   color: #fff;
   font-size: 16px;
 }
+
+.btn:focus,
+.btn{
+  box-shadow: none;
+  &:hover{
+    color: rgb(255 255 255 / 85%);
+
+  }
+}
+
