@@ -1,15 +1,15 @@
 // базовые подключения
-@import "libs/bootstrap";
-@import "libs/bootstrap4";
+//@import "libs/bootstrap";
+//@import "libs/bootstrap4";
 @import "libs/jquery.fancybox";
 @import "libs/slick";
-//@import "vars";
-//@import "mixins";
-//@import "fonts";
-//@import "settings";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
 
 // подключения компонентов страницы
-//@import "./components/header";
+@import "./components/header";
 @import "./components/footer"
 
 

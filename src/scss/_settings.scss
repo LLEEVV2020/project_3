@@ -2,6 +2,12 @@ html {
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 *,
 *::before,
 *::after {
@@ -79,7 +85,7 @@ a {
 }
 
 .container {
-  margin: 1440px auto;
+  margin:  auto;
   padding: 20px var(--container-offset);
   max-width: var(--container-width);
 }
@@ -104,4 +110,10 @@ a {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+
+@media (min-width: 1200px){
+  .container{
+    max-width: 1120px;
+  }
 }
