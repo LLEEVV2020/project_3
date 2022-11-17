@@ -1,9 +1,13 @@
 .section3{
   margin-bottom: 190px;
+  @media (max-width: 680px){
+    margin-bottom: 90px;
+  }
 }
 .section3__info{
   display: flex;
   margin-bottom: 40px;
+
   img{
     width: 150px;
     height: 150px;
@@ -15,12 +19,32 @@
     line-height: 1.1;
     font-weight: 600;
   }
+  @media (max-width: 680px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    img{
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .section3__date{
   display: flex;
   gap: 52px;
   margin-bottom: 70px;
+  @media (max-width: 991px){
+    flex-direction: column;
+    & > *{
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      max-width: 415px;
+      width: 100%;
+    }
+  }
 }
 .section3__days{
   display: flex;
@@ -72,21 +96,44 @@
   background: #EBF5FF;
   border-radius: 40px;
   padding: 56px;
+  @media (max-width: 991px){
+    flex-direction: column;
+    & > *{
+      max-width: 415px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+  @media (max-width: 680px){
+    padding: 30px;
+  }
 
   .block-left{
     h2.title{
       text-align: left;
       margin-bottom: 35px;
+      @media (max-width: 680px){
+        text-align: center;
+        br{
+          display: none;
+        }
+      }
     }
     p{
       color: #6C93B3;
       font-size: 20px;
       letter-spacing: -0.01em;
       line-height: 1.35;
+      @media (max-width: 680px){
+        text-align: center;
+      }
     }
   }
   .block-right{
-    width: 488px;
+    max-width: 488px;
+    width: 100%;
   }
   ::placeholder {
     color: #0B212F;
@@ -106,11 +153,15 @@
     }
   }
   .two-elements{
-    width: 230px;
+
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 30px;
+    @media (max-width: 680px){
+      flex-direction: column;
+      gap: 0;
+    }
   }
   p{
     font-size: 20px;
@@ -140,7 +191,8 @@
   .wrapper-btn{
     margin-top: 30px;
     display: flex;
-    &> *{
+    .block-right,
+    .block-left{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -152,6 +204,14 @@
   font-size: 12px;
   line-height: 16px;
   width: 229px;
+  @media (max-width: 991px){
+    margin-right: 20px;
+  }
+  @media (max-width: 680px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
   .btn{
@@ -162,6 +222,9 @@ border-radius: 10px;
 color: #6C93B3;
 font-weight: 600;
 font-size: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
   }
 
 }

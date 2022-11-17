@@ -19,7 +19,7 @@
 
 .header{
   position: relative;
-  z-index: 1;
+  z-index: 2;
   .navbar{
     color: #fff;
     margin-bottom: 0;
@@ -38,6 +38,33 @@
     padding-bottom: 10px;
   }
 
+}
+
+
+
+
+@media (min-width: 992px){
+  .tot-samii{
+    order: 1;
+  }
+}
+@media (max-width: 991px){
+  .navbar-light .navbar-nav .nav-link{
+    text-align: center;
+  }
+  .navbar-collapse{
+    transform: translateX(3px);
+  }
+}
+
+
+.navbar-light .navbar-toggler{
+  border-color: #fff;
+  box-shadow: none;
+
+  .navbar-toggler-icon{
+    background-image: url(../img/svg/burger-menu.svg);
+  }
 }
 
 .header-wrapper{

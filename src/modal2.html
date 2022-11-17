@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+
+    <div class="header-wrapper">
+      @include('partials/header.html')
+      @include('partials/main-banner.html')
+    </div>
+
+    <main class="main">
+
+      @include('partials/registration.html')
+      @include('partials/section1.html')
+      @include('partials/section2.html')
+      @include('partials/section3.html')
+      @include('partials/section4.html')
+
+    </main>
+
+    @include('partials/footer.html')
+
+
+
+    <div class="modalBG">
+      <div class="modalSendRequest">
+        <div class="closeButton"></div>
+        <img src="img/svg/modal1.svg">
+        <h4 class="fourHeader">Оставьте заявку — <br>мы сообщим, когда откроется регистрация</h4>
+        <input class="inputEmail" type="text" name="email" placeholder="Электронная почта">
+        <button class="sendButton">Отправить</button>
+        Нажимая на кнопку, я соглашаюсь<br>на обработку персональных данных
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

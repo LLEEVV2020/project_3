@@ -7,6 +7,9 @@ h2.title{
   margin-bottom: 90px;
 
   color: #0B212F;
+  @media (max-width: 680px){
+    font-size: 30px;
+  }
 
   span{
     color:  #0088FE;
@@ -15,6 +18,10 @@ h2.title{
 .section2-wrapper{
   display: flex;
   gap: 30px;
+  @media (max-width: 991px){
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .section2-item{
@@ -25,6 +32,18 @@ h2.title{
   padding-top: 40px;
   min-height: 371px;
   position: relative;
+  overflow: hidden;
+  @media (max-width: 991px){
+    max-width: 460px;
+    width: 100%;
+  }
+  @media (max-width: 680px){
+    min-height: inherit;
+    padding-bottom: 40px;
+    padding-right: 40px;
+    text-align: center;
+    max-width: 350px;
+  }
 
   &::before{
     content: "";
@@ -41,6 +60,9 @@ h2.title{
     background: #7622FF;
     &::before{
       background-image: url(../img/svg/section2-1.svg);
+      @media (max-width: 680px){
+        display: none;
+      }
     }
 
   }
@@ -48,6 +70,9 @@ h2.title{
     background: #0088FE;
     &::before{
       background-image: url(../img/svg/section2-2.svg);
+      @media (max-width: 680px){
+        display: none;
+      }
     }
 
   }
@@ -69,6 +94,9 @@ h2.title{
     position: absolute;
     bottom: 0;
     right: 0;
+    @media (max-width: 680px){
+      display: none;
+    }
   }
 }
 
