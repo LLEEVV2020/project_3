@@ -1,3 +1,6 @@
+.section3{
+  margin-bottom: 190px;
+}
 .section3__info{
   display: flex;
   margin-bottom: 40px;
@@ -61,4 +64,20 @@
   background-size: 9px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.section3__form{
+  display: flex;
+  .block-left{
+    h2.title{
+      text-align: left;
+      margin-bottom: 35px;
+    }
+    p{
+      color: #6C93B3;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+  }
 }
