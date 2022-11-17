@@ -17,7 +17,10 @@
 
 .secLessons, .secQuests, .secGift, .secSell{
 margin-bottom: 200px;
-width: 1120px;
+@media (max-width: 991px){
+  margin-bottom: 100px;
+}
+//width: 1120px;
 }
 
 .blockHeader{
@@ -48,6 +51,7 @@ display: block;
 max-width: 350px;
 padding-top: 20px;
 box-sizing: border-box;
+
 }
 
 .blockLesson{
@@ -56,6 +60,7 @@ justify-content: space-between;
 align-items: center;
 max-width: 1120px;
 box-sizing: border-box;
+flex-wrap: wrap;
 }
 
 .videoLesson{
@@ -110,6 +115,8 @@ justify-content: space-between;
 align-items: center;
 max-width: 1120px;
 box-sizing: border-box;
+flex-wrap: wrap;
+gap: 20px;
 }
 
 .questStep{
@@ -122,6 +129,7 @@ border-radius: 40px;
 
 padding: 38px 42px 0 42px;
 box-sizing: border-box;
+
 }
 
 .stepHead{
@@ -158,12 +166,19 @@ background-position: bottom center;
 }
 
 .secGift{
-width: 973px;
-height: 428px;
+  width: 100%;
+  max-width: 973px;
+  min-height: 428px;
 display: flex;
 justify-content: space-between;
 align-items: center;
 box-sizing: border-box;
+margin-left: auto;
+margin-right: auto;
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .videoGift{
@@ -172,6 +187,9 @@ height: 350px;
 border-radius: 100px;
 position: relative;
 box-sizing: border-box;
+@media (max-width: 1050px) {
+margin-bottom: 15px;
+}
 }
 .videoGiftImg{
 position: absolute;
@@ -201,12 +219,18 @@ background-image: url(../img/sellBg.png);
 background-position: bottom center;
 background-repeat: no-repeat;
 border-radius: 40px;
-height: 690px;
+min-height: 690px;
 position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
+
+  @media (max-width: 770px) {
+    min-height: inherit;
+    background-image: none;
+    padding-bottom: 30px;
+  }
 }
 
 .sellImg{
@@ -233,6 +257,9 @@ outline: 0;
 border-radius: 10px;
 margin: 290px 0 15px 0;
 cursor: pointer;
+@media (max-width: 770px) {
+  margin-top: 0;
+}
 }
 
 .startButton:hover{

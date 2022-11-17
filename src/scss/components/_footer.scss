@@ -5,6 +5,10 @@
     border-bottom: 1px solid #253743;
     padding: 50px 0;
     display: flex;
+    @media (max-width: 680px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   &-inner-right{
     margin: 0 auto;
@@ -68,7 +72,7 @@ white-space: nowrap;
 
 
 .modalBG{
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -80,13 +84,18 @@ white-space: nowrap;
     margin: auto !important;
   }
 }
+.modalBG-active{
+  display: flex;
+}
 
 .modalSendRequest{
 	font-family: ManMedium;
 	font-size: 12px;
 	color: #0B212F;
-	width: 518px;
-	height: 482px;
+  max-width: 518px;
+  width: 100%;
+	min-height: 482px;
+
     background: #FFFFFF;
 	border-radius: 40px;
 	margin: 0 auto;
@@ -176,8 +185,9 @@ white-space: nowrap;
 }
 
 .modalAcceptReg{
-	width: 505px;
-	height: 369px;
+	max-width: 505px;
+  width: 100%;
+	min-height: 369px;
     background: #FFFFFF;
 	border-radius: 40px;
 	margin: 500px auto 0 auto;

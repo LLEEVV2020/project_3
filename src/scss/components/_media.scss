@@ -1,0 +1,114 @@
+
+
+@media (max-width: 1087px) {
+	.blockLesson {
+		justify-content: center;
+		gap: 40px;
+	}
+
+	.blockQuestSteps {
+		justify-content: center;
+	}
+
+	.sellImg {
+		//left: ;
+	}
+}
+
+@media (max-width: 885px) {
+	.secGift {
+		justify-content: center;
+	}
+
+
+}
+
+@media (max-width: 850px) {
+	.blockHeader {
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.block h2 {
+		margin: 0;
+	}
+
+	.secSeeYou h2 {
+		margin-bottom: 30px;
+	}
+
+	.headParagraph {
+		max-width: 500px;
+	}
+
+	.footerLogo {
+		margin-right: auto;
+	}
+}
+
+@media (max-width: 680px) {
+	.footerLinks {
+		justify-content: center;
+	}
+
+	.footerLogo {
+		display: none;
+	}
+
+	.sellParagrph {
+		font-size: 30px;
+	}
+
+}
+
+@media (max-width: 500px) {
+	.infoGift {
+		width: 100%;
+		max-width: 495px;
+	}
+		.sellParagrph {
+		font-size: 32px;
+	}
+
+}
+
+.sellParagrph{
+  max-width: 573px;
+}
+@media (max-width: 1200px) {
+  .sellParagrph{
+
+    position: relative;
+    .sellImg{
+      top: -39px;
+      left: -29px;
+    }
+  }
+}
+@media (max-width: 680px) {
+  .sellParagrph .sellImg {
+    top: -25px;
+    left: -9px;
+    width: 193px;
+  }
+  .block h2, .thirdHeader{
+    font-size: 30px;
+  }
+}
+
+
+.fixed {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 100%;
+  @media (max-width: 750px){
+    position: relative;
+  }
+}
+.fixed_block_position{
+  width: 100% !important;
+}
+
