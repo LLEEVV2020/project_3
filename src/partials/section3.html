@@ -111,12 +111,12 @@
         <p>Желаем отличного настроения!</p>
       </div>
 
-      <div class="block-right">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ФИО">
+      <form class="block-right">
+        <input name="user-name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="ФИО">
 
         <div class="two-elements">
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Телефон">
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Электронная почта">
+          <input name="user-phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Телефон">
+          <input name="user-email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Электронная почта">
         </div>
 
         <p>Есть свои коньки? <br>
@@ -124,13 +124,13 @@
 
           <div class="d-flex">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+              <input value="Да" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
               <label class="form-check-label" for="flexRadioDefault1">
                 Да
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <input value="Нет" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
               <label class="form-check-label" for="flexRadioDefault2">
                 Нет
               </label>
@@ -140,10 +140,10 @@
 
           <div class="wrapper-btn">
             <div class="wrapper-btn__text">Нажимая на кнопку, я соглашаюсь на обработку персональных данных</div>
-            <div class="btn">Записаться</div>
+            <button class="btn btn-send">Записаться</button>
           </div>
 
-      </div>
+        </form>
 
     </div>
 

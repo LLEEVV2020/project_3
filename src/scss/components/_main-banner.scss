@@ -11,12 +11,19 @@
     display: flex;
     padding-bottom: 0;
   }
+  @media (max-width: 680px){
+    min-height: 710px;
+  }
   .container-custom{
     padding-top: 6rem;
     position: relative;
     z-index: 1;
+    @media (max-width: 991px){
+      margin-top: 0;
+      margin-bottom: auto;
+    }
     @media (max-width: 500px){
-      padding-top: 13rem;
+      //padding-top: 13rem;
       p br{
         display: none;
       }
@@ -43,6 +50,15 @@
       background-size: cover;
       transform: translateX(0rem);
       background-position-x: 62%;
+    }
+
+    @media (max-width: 680px){
+      height: 60%;
+      top: inherit;
+      bottom: 0;
+      .main-banner-hover{
+        height: 60%;
+      }
     }
   }
   .main-banner-hover{
@@ -74,6 +90,10 @@
     }
     @media (max-width: 991px){
       text-shadow: 1px 1px 2px black, 2px 2px 2px black;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 680px){
+      text-shadow: none;
     }
   }
   p{
@@ -84,7 +104,9 @@
     @media (max-width: 991px){
       text-shadow: 1px 1px 3px black;
     }
-
+    @media (max-width: 680px){
+      text-shadow: none;
+    }
   }
 
   .left-container{
@@ -98,10 +120,29 @@
     @media (max-width: 680px){
       margin-top: 120px;
     }
-
+    @media (max-width: 991px){
+      margin-top: 20px;
+    }
 
   }
 
 }
 
 
+.btn-send{
+  cursor: pointer;
+}
+.modalBG{
+  position: relative;
+  & > .closeButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-radius: 0;
+    cursor: default;
+  }
+}
