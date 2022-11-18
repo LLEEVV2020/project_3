@@ -22,6 +22,11 @@
   position: relative;
   max-width: 810px;
   margin: 0 auto;
+  &  a,
+  & span{
+    position: relative;
+    z-index: 1;
+  }
 
   @media (max-width: 750px){
     flex-direction: column;
@@ -38,7 +43,7 @@
     height: 100%;
     background-size: cover;
     @media (max-width: 991px){
-      display: none;
+     // display: none;
     }
   }
   &::before{
@@ -46,13 +51,18 @@
     width: 293px;
     left: 0;
     transform: translateX(-100%);
+    @media (max-width: 991px){
+      transform: translateX(-75%);
+    }
   }
   &::after{
     background-image: url(../img/svg/registration-right.svg);
     right: 0;
     transform: translateX(100%);
     width: 323px;
-
+    @media (max-width: 991px){
+      transform: translateX(60%);
+    }
   }
 
 
