@@ -41,10 +41,12 @@
   @media (max-width: 991px){
     flex-direction: column;
     text-align: center;
+    margin-top: 60px;
+
   }
   @media (max-width: 680px){
   margin-bottom: 60px;
-
+    text-align: left;
   }
   .block-left{
     font-size: 48px;
@@ -97,16 +99,36 @@
   text-align: center;
   justify-content: center;
 
+  overflow: hidden;
   width: 254px;
   height: 254px;
+  position: relative;
+
+
 }
+.section1__item:first-child{
+  .section1__item-img::before{
+    content: "";
+    background-image: url(../img/bell-vector.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .section1__item-head{
   font-size: 112px;
   line-height: 1.1;
+  position: relative;
 }
 .section1__item-descr{
   font-size: 20px;
   line-height: 26px;
+  position: relative;
 }
 .section1__item-text{
   display: flex;

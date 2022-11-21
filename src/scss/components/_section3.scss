@@ -191,6 +191,15 @@
   .wrapper-btn{
     margin-top: 30px;
     display: flex;
+    @media (max-width: 680px){
+      flex-direction: column-reverse;
+
+      .btn{
+        width: 100%;
+      }
+    }
+
+
     .block-right,
     .block-left{
       display: flex;
@@ -211,6 +220,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 12px auto 0;
   }
 }
 
