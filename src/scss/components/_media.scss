@@ -8,6 +8,7 @@
 
 	.blockQuestSteps {
 		justify-content: center;
+    gap: 30px;
 	}
 
 	.sellImg {
@@ -58,7 +59,7 @@
 	}
 
 	.sellParagrph {
-		font-size: 30px;
+		font-size: 28px;
 	}
 
 }
@@ -68,9 +69,7 @@
 		width: 100%;
 		max-width: 495px;
 	}
-		.sellParagrph {
-		font-size: 32px;
-	}
+
 
 }
 
@@ -89,9 +88,9 @@
 }
 @media (max-width: 680px) {
   .sellParagrph .sellImg {
-    top: -25px;
+    top: -22px;
     left: -9px;
-    width: 193px;
+    width: 170px;
   }
   .block h2, .thirdHeader{
     font-size: 30px;
@@ -99,7 +98,9 @@
   .section3__days{
     justify-content: center;
   }
-
+  .thirdHeader{
+    margin-bottom: 30px;
+  }
 }
 
 

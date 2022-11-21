@@ -18,10 +18,19 @@
 .secLessons, .secQuests, .secGift, .secSell{
 margin-bottom: 200px;
 @media (max-width: 991px){
-  margin-bottom: 100px;
+  margin-bottom: 190px;
 }
 //width: 1120px;
 }
+@media (max-width: 991px){
+  .secGift{
+    margin-bottom: 120px;
+  }
+  .secSell{
+  margin-bottom: 120px;
+  }
+}
+
 
 .blockHeader{
 display: flex;
@@ -188,7 +197,7 @@ border-radius: 100px;
 position: relative;
 box-sizing: border-box;
 @media (max-width: 1050px) {
-margin-bottom: 15px;
+margin-bottom: 30px;
 }
 }
 .videoGiftImg{
@@ -227,9 +236,18 @@ align-items: center;
 text-align: center;
 
   @media (max-width: 770px) {
-    min-height: inherit;
-    background-image: none;
+    min-height: 725px;
     padding-bottom: 30px;
+    background-image: url(../img/sellBg2.png);
+    background-size: contain;
+    background-position: 0px 197px;
+    width: 335px;
+    margin-right: auto;
+    margin-left: auto;
+    .sellParagrph{
+      margin-bottom: auto;
+      padding: 0 2px;
+    }
   }
 }
 
@@ -275,6 +293,9 @@ background-repeat: no-repeat;
 background-position: bottom center;
 width: 100%;
 margin: 0 0 200px 0;
+  @media (max-width: 680px) {
+    margin-bottom: 120px;
+  }
 }
 
 

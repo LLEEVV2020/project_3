@@ -24,11 +24,13 @@ h2.title{
   }
 }
 .section3{
+  @media (max-width: 991px){
   .section1__text{
     max-width: 360px;
     margin-right: auto;
     margin-left: auto;
   }
+}
 }
 
 
