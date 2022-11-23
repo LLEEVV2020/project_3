@@ -66,6 +66,10 @@
       transform: translateX(60%);
     }
   }
+  &:last-child{
+    display: none;
+  }
+
 
 
 }
@@ -135,4 +139,42 @@
 .registration__time{
   font-size: 26px;
   font-weight: 700;
+}
+
+.registration__inner{
+  @media (max-width: 760px){
+    &:first-child{
+      display: none;
+    }
+    &:last-child{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .registration__div{
+        margin-bottom: 0;
+      }
+      span{
+        margin-right: 7px !important;
+      }
+    }
+  }
+  @media (max-width: 550px){
+    .registration__img{
+      display: none;
+    }
+  }
+  @media (max-width: 400px){
+    .registration__day, .registration__time{
+      font-size: 22px;
+    }
+    .btn {
+      padding: 5px 13px;
+    }
+    .registration__time{
+      margin-bottom: 0;
+    }
+    .registration__div{
+      line-height: 1.1;
+    }
+  }
 }
