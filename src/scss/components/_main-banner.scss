@@ -45,10 +45,14 @@
     width: 100%;
     transform: translateX(15rem);
     object-fit: none;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    -ms-interpolation-mode: nearest-neighbor;  /* IE */
+    image-rendering: crisp-edges; /* Стандартное свойство */
+    image-rendering: pixelated;
     @media (max-width: 991px){
       //display: none;
       background-size: cover;
-      transform: translateX(0rem);
+      transform: translateX(0rem) translate3d(0, 0, 0);
       background-position-x: 62%;
     }
 

@@ -224,7 +224,7 @@ const images = () => {
         progressive: true
       }),
       image.optipng({
-        optimizationLevel: 2
+        optimizationLevel: 1
       }),
     ])))
     .pipe(dest(paths.buildImgFolder))
