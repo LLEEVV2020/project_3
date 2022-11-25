@@ -49,6 +49,11 @@
     -ms-interpolation-mode: nearest-neighbor;  /* IE */
     image-rendering: crisp-edges; /* Стандартное свойство */
     image-rendering: pixelated;
+    /*&::before{
+      content: "";
+      background-image: url(../img/main-banner-bg.webp);
+
+    }*/
     @media (max-width: 991px){
       //display: none;
       background-size: cover;
@@ -150,3 +155,10 @@
     cursor: default;
   }
 }
+
+/*.main-banner-bg-svg{
+  background-image: url(../img/svg/svg1.svg) !important;
+  &::after, &::before{
+    display: none;
+  }
+}*/

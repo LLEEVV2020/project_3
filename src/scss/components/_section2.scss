@@ -87,6 +87,10 @@ h2.title{
       }
     }
 
+    img{
+      max-width: 273px;
+      height: 305px;
+    }
   }
   &:last-child{
     background: #0088FE;
@@ -96,7 +100,10 @@ h2.title{
         //display: none;
       }
     }
-
+    img{
+      max-width: 297px;
+      height: 371px;
+    }
   }
   h3{
     font-size: 32px;

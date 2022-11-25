@@ -308,3 +308,42 @@ function uploadFile(file){
     reader.readAsDataURL(file);
 
 }
+
+$(document).ready(function() {
+
+  const zeroLength = 2;
+
+  console.log('9'.padStart(zeroLength, '0'));
+  console.log('27'.padStart(zeroLength, '0'));
+  console.log('120'.padStart(zeroLength, '0'));
+
+let timerShow = document.getElementById("timerTime");
+let timerday = document.getElementById("timerday");
+let timerShow3 = document.getElementById("timerTime2");
+let timerday3 = document.getElementById("timerday2");
+
+let timeMinut = 86400 + 43200 + 2520 + 50;
+    //timeMinut = parseInt(timerInput.value) * 60
+
+
+let timer = setInterval(function () {
+  let seconds = timeMinut%60;
+  let minutes = timeMinut/60%60;
+  let  hour = timeMinut/60/60%60%24;
+  let  day = timeMinut/24/60/60%60;
+
+  seconds = seconds + "";
+  seconds = seconds.padStart(zeroLength, '0')
+
+        let strTimer = `${Math.trunc(hour)}:${Math.trunc(minutes)}:${seconds}`;
+        let strTimer2 = `${Math.trunc(day)}`;
+        timerday.innerHTML = strTimer2;
+        timerShow.innerHTML = strTimer;
+
+        timerday3.innerHTML = strTimer2;
+        timerShow3.innerHTML = strTimer;
+
+    --timeMinut;
+}, 1000)
+
+});

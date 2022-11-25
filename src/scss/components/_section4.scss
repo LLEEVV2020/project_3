@@ -166,12 +166,14 @@ background-position: bottom center;
 background-image: url(../img/step2.png);
 background-repeat: no-repeat;
 background-position: bottom center;
+background-size: 292px;
 }
 
 .step3{
 background-image: url(../img/step3.png);
 background-repeat: no-repeat;
 background-position: bottom center;
+background-size: 354px;
 }
 
 .secGift{
@@ -234,6 +236,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
+background-size: 1120px;
 
   @media (max-width: 770px) {
     min-height: 725px;

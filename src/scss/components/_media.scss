@@ -49,6 +49,11 @@
 	}
 }
 
+@media (max-width: 770px) {
+  .sellParagrph {
+    font-size: 28px;
+  }
+}
 @media (max-width: 680px) {
 	.footerLinks {
 		justify-content: center;
@@ -62,7 +67,10 @@
 		font-size: 28px;
 	}
 
+
 }
+
+
 
 @media (max-width: 500px) {
 	.infoGift {
@@ -84,6 +92,14 @@
       top: -39px;
       left: -29px;
     }
+  }
+}
+
+@media (max-width: 770px) {
+  .sellParagrph .sellImg {
+    top: -22px;
+    left: -9px;
+    width: 170px;
   }
 }
 @media (max-width: 680px) {
