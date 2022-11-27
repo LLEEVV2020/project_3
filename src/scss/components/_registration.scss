@@ -73,8 +73,10 @@
     display: none;
   }
 
+}
 
-
+.registration__div{
+  display: flex;
 }
 .registration__img{
 
@@ -125,7 +127,7 @@
 .registration__time{
   margin-right: 40px;
   @media (max-width: 750px){
-    margin-bottom: 8px;
+    //margin-bottom: 8px;
   }
 }
 
@@ -160,6 +162,11 @@
         margin-right: 7px !important;
       }
     }
+    .registration__time{
+      span{
+        margin-right: 0 !important;
+      }
+    }
   }
   @media (max-width: 550px){
     .registration__img{
@@ -185,4 +192,11 @@
   .registration__day, .registration__time{
     font-size: 20px;
   }
+}
+
+.timer__item:not(:last-child)::after {
+    content: ':';
+}
+.registration__time{
+  display: flex;
 }
