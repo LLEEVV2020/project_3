@@ -240,3 +240,9 @@ white-space: nowrap;
 .footer-bottom__caption a{
   color: #fff;
 }
+
+.flex-c{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
