@@ -622,6 +622,10 @@ let timer = setInterval(function () {
                 const elSeconds2 = document.querySelector('.timer__seconds2');
 
 
+                const day_title1 = document.querySelector('.day-title1');
+
+                const day_title2 = document.querySelector('.day-title2');
+
                 let deadline = Date.now();
 
                 hghhjhj = hghhjhj - vgggggg;
@@ -641,8 +645,10 @@ let timer = setInterval(function () {
                     elHours2.textContent = timer.hours;
                     elMinutes2.textContent = timer.minutes;
                     elSeconds2.textContent = timer.seconds;
-                    /*elDays.dataset.title = timer.daysTitle;
-                    elHours.dataset.title = timer.hoursTitle;
+
+                    day_title1.textContent = timer.daysTitle;
+                    day_title2.textContent = timer.daysTitle;
+                    /*elHours.dataset.title = timer.hoursTitle;
                     elMinutes.dataset.title = timer.minutesTitle;
                     elSeconds.dataset.title = timer.secondsTitle;*/
                 }, () => {
