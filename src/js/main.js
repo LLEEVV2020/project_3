@@ -608,7 +608,7 @@ let timer = setInterval(function () {
 
         document.addEventListener('DOMContentLoaded', () => {
 
-            let hghhjhj = 13;
+            let hghhjhj = 1;
 
             const runTimer = (vgggggg) => {
                 const elDays = document.querySelector('.timer__days');

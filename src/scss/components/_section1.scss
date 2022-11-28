@@ -71,6 +71,9 @@
     display: flex;
     flex-direction: column;
     margin-top: auto;
+    @media (max-width: 680px){
+      font-size: 18px;
+    }
   }
 }
 

@@ -50,6 +50,11 @@ max-width: 650px;
 
 .blueHeader{
 color: #0088FE;
+  @media (max-width: 551px){
+    br{
+      display: none;
+    }
+  }
 }
 
 .headParagraph{
