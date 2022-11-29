@@ -374,12 +374,6 @@ async function formSendAsync(btn_child){
 
 
 
-            if(btn_child.classList.contains('soobshit-o-nachale')){
-              ym(91364973,'reachGoal','x5paket-katok-mk-send');
-            }
-            if(btn_child.classList.contains('zapisatsa')){
-              ym(91364973,'reachGoal','x5paket-katok-mk-done');
-            }
 
 
             form.reset();
@@ -388,7 +382,21 @@ async function formSendAsync(btn_child){
             formMainSend();
 
             $(".modalBG").removeClass("modalBG-active");
-            $(".modal1").addClass("modalBG-active");
+
+            if(btn_child.classList.contains('soobshit-o-nachale')){
+              ym(91364973,'reachGoal','x5paket-katok-mk-send');
+
+              $(".modal3").addClass("modalBG-active");
+            }
+            if(btn_child.classList.contains('zapisatsa')){
+              ym(91364973,'reachGoal','x5paket-katok-mk-done');
+
+              $(".modal1").addClass("modalBG-active");
+            }
+
+
+
+
 
             return true;
 
