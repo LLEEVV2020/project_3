@@ -13,7 +13,7 @@ $mail->IsHTML(true); // включение html тегов в письме
 
 //От кого письмо
 $mail->setFrom('site@name.ru', 'от name.ru');
-$mail->addAddress('info@mf-vi.ru', 'Лев');
+$mail->addAddress('info@мосрембыт.рус', 'Лев');
 
 
 // тема письма
@@ -40,6 +40,11 @@ if(trim(!empty($_POST['user-message']))){
 if(trim(!empty($_POST['flexRadioDefault']))){
     $body.='<p><strong>Есть коньки?:</strong> '.$_POST['flexRadioDefault'].'</p>';
 }
+if(trim(!empty($_POST['drone']))){
+  $body.='<p><strong>Время?: </strong> '.$_POST['drone'].'</p>';
+}
+
+
 
 if(trim(!empty($_POST['source']))){
     $body.='<p><strong>Где нашли нас?:</strong> '.$_POST['source'].'</p>';

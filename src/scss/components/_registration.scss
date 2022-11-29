@@ -110,14 +110,14 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-image: url(../img/bell3.webp);
+    background-image: url(../img/bell4.webp);
     background-size: cover;
     background-position: bottom;
   }
 
   @media (max-width: 750px){
     display: block;
-    background-image: url(../img/bell2.png);
+   // background-image: url(../img/bell2.png);
     background-repeat: no-repeat;
     height: 73px;
     width: 80px;
@@ -128,8 +128,14 @@
     img{
       display: none;
     }
+    &::before{
+      max-width: 90px;
+      height: 72px;
+      left: -27px;
+      background-image: url(../img/bell4.webp);
+      background-repeat: no-repeat;
+    }
 
-    background-image: url(../img/bell3.webp);
   }
 }
 
