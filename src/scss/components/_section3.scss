@@ -238,6 +238,14 @@ display: flex;
 justify-content: center;
 align-items: center;
   }
+  .btn__active{
+    background: #0088FE;
+    color: #fff;
+
+    &:hover{
+      background: rgb(0 136 254 / 81%);
+    }
+  }
 
 }
 .section3__form-none{

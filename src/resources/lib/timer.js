@@ -1,0 +1,302 @@
+var endDate = new Date(2022, 11, 5, 12, 0, 0, 0).getTime();
+var endDateArr = [
+  new Date(2022, 11, 5, 12, 0, 0, 0).getTime(),  // 5 декабря 2022 года
+  new Date(2022, 11, 12, 12, 0, 0, 0).getTime(), // 12 декабря 2022 года
+  new Date(2022, 11, 19, 12, 0, 0, 0).getTime(),  // 19 декабря 2022 года
+  new Date(2022, 11, 26, 12, 0, 0, 0).getTime(), // 26 декабря 2022 года
+  new Date(2023, 0, 2, 12, 0, 0, 0).getTime() // 2 января 2023 года
+];
+
+function createLabel(number, titles) {
+  const cases = [2, 0, 1, 1, 1, 2];
+  return `${titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]]}`;
+}
+
+var timer = setInterval(function() {
+  let now = new Date().getTime();
+  let indexArr = 0;
+  let t = endDateArr[indexArr] - now;
+
+  if (t < 0) {
+      indexArr++;
+      t = endDateArr[indexArr] - now;
+  }
+
+  if (t >= 0) {
+
+      let days = Math.floor(t / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      let secs = Math.floor((t % (1000 * 60)) / 1000);
+
+      const elDays = document.querySelector('.timer__days');
+      const elHours = document.querySelector('.timer__hours');
+      const elMinutes = document.querySelector('.timer__minutes');
+      const elSeconds = document.querySelector('.timer__seconds');
+
+      const elDays2 = document.querySelector('.timer__days2');
+      const elHours2 = document.querySelector('.timer__hours2');
+      const elMinutes2 = document.querySelector('.timer__minutes2');
+      const elSeconds2 = document.querySelector('.timer__seconds2');
+
+      elDays.textContent = days + "";
+      elHours.textContent = ("0"+hours).slice(-2) + "";
+      elMinutes.textContent = ("0"+mins).slice(-2) + "";
+      elSeconds.textContent = ("0"+secs).slice(-2) + "";
+
+      elDays2.textContent = days + "";
+      elHours2.textContent = ("0"+hours).slice(-2) + "";
+      elMinutes2.textContent = ("0"+mins).slice(-2) + "";
+      elSeconds2.textContent = ("0"+secs).slice(-2) + "";
+
+      let day =  createLabel(days, ['день', 'дня', 'дней']);
+
+      const day_title1 = document.querySelector('.day-title1');
+      const day_title2 = document.querySelector('.day-title2');
+
+      day_title1.textContent = day;
+      day_title2.textContent = day;
+
+  }
+
+}, 1000);
+
+
+
+
+
+
+// телефон заполнить полностью
+let phoneText = false;
+// емайл заполнить полностью
+let emailText = false;
+
+var h_form_btn = document.querySelectorAll('.btn-send');
+
+h_form_btn.forEach(function (item) {
+    formReadyClick(item);
+});
+
+function formReadyClick (btn) {
+
+    let form = btn.closest("form");
+
+    form.addEventListener("submit", formSendAsync2, {once: false});
+
+    async function formSendAsync2(e){
+
+        e.preventDefault(); // запрет на отправку стандартной формы
+
+        formSendAsync(btn);
+    }
+}
+
+
+
+async function formSendAsync(btn_child){
+
+    let form = btn_child.closest("form");
+
+    let error = formValidate(form);
+
+    let formData = new FormData(form);
+
+    if(error === 0){
+
+        form.classList.add('_sending');
+        let response = await fetch('../callback-request/index.php', {
+           method: 'POST',
+            body: formData
+        });
+        if(response.ok){
+            let result = await response.json();
+
+
+
+
+
+            form.reset();
+            form.classList.remove('_sending');
+
+            formMainSend();
+
+            $(".modalBG").removeClass("modalBG-active");
+
+            if(btn_child.classList.contains('soobshit-o-nachale')){
+              ym(91364973,'reachGoal','x5paket-katok-mk-send');
+
+              $(".modal3").addClass("modalBG-active");
+            }
+            if(btn_child.classList.contains('zapisatsa')){
+              ym(91364973,'reachGoal','x5paket-katok-mk-done');
+
+              $(".modal1").addClass("modalBG-active");
+            }
+
+
+
+
+
+            return true;
+
+        } else {
+            alert("ошибка");
+        }
+
+    } else {
+        if(phoneText){
+            alert('Введите ещё цифры телефона');
+        } else if(emailText)  {
+            alert('Введите емайл полностью');
+        } else {
+            alert('заполните поля');
+        }
+    }
+    return false;
+}
+
+
+function formMainSend() {
+
+        let panel = document.querySelector('body');
+        let modal = document.querySelector('.modal-wrapper'); // .modal-wrapper обертка для всех модалок с задним фоном во весь экран
+
+        let modals = document.querySelectorAll('.modal-wrapper > .modal');
+
+
+
+        for (let modal of modals) {
+            modal.classList.remove("active-modal");
+        }
+        //document.querySelector('.modal-thanks').classList.add("active-modal");
+
+       // panel.classList.toggle('no-scroll');
+       // modal.classList.add('modal-wrapper--open'); // добавляем этот класс .modal-wrapper--open для оберток всех модалок тогда окно откроется
+
+}
+
+// проверка на ошибки
+function formValidate(form){
+    let error = 0;
+
+    let formReq = form.getElementsByClassName('_req');
+
+    for (let index = 0; index < formReq.length; index++){
+        const input = formReq[index];
+        formRemoveError(input); // убрать класс проверки
+
+        if(input.classList.contains('_email')){
+            if(emailTest(input)){
+                formAddError(input);
+                error++;
+            }
+        }
+        else if(input.classList.contains('input__mask')){
+            if(phoneTest(input)){
+                formAddError(input);
+                error++;
+                phoneText = true;
+            }
+
+        }
+        else if(input.getAttribute("type") === "checkbox" && input.checked === false){
+            formAddError(input);
+            error++;
+        } else {
+            if(input.value === ''){
+                formAddError(input);
+                error++;
+            }
+        }
+    }
+    return error;
+}
+// добавляют родители и элементу класс _error
+function formAddError(input){
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+}
+function formRemoveError(input){
+    input.parentElement.classList.remove('_error');
+    input.classList.remove('_error');
+}
+
+// проверка emai
+function emailTest(input){
+    emailText = true;
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+// проверка телефона
+function phoneTest(input){
+    if(input.value.replace(/ +/g, ' ').trim() === "+7" ||
+       input.value === '' ||
+       input.value.replace(/[\+\(\)\s]/g,"").length < 12
+      ){
+
+       return true ;
+    }
+
+    return false;
+}
+
+    const formImage = document.getElementById('quiz__file');
+    const formPreview = document.querySelector('.input__file-button-text');
+
+    if(formImage){
+       formImage.addEventListener('change', () => {
+           uploadFile(formImage.files[0]);
+        });
+    }
+
+
+
+function uploadFile(file){
+
+
+    if(file.size > 4 * 1024 * 1024){
+        alert('файл должен быть менее 4мб');
+        return;
+    }
+
+    var reader = new FileReader();
+
+    reader.onload = function (e){
+        formPreview.innerHTML = `<span style="color: #f28d55;">Файл добавлен</span>`;
+    }
+    reader.onerror = function (e){
+        alert('Ошибка');
+    };
+    reader.readAsDataURL(file);
+
+}
+
+const formPreview2 = document.querySelector('.phone_click');
+/*
+formPreview2.addEventListener( "focus" , function() {
+  if(this.value.replace(/[\+\(\)\s]/g,"").length >= 12){
+
+    let zapisatsa  = document.querySelector('.zapisatsa ');
+
+    zapisatsa.classList.add('btn__active');
+
+  }
+});*/
+
+formPreview2.addEventListener('keydown', function(event) {
+  if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+    alert('Отменить!')
+  }
+
+  if(this.value.replace(/[\+\(\)\s]/g,"").length >= 12){
+
+    let zapisatsa  = document.querySelector('.zapisatsa ');
+
+    zapisatsa.classList.add('btn__active');
+
+  }
+
+});
+
+
+

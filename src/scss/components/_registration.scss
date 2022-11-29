@@ -2,6 +2,7 @@
   background: #FFF41B;
   width: 100%;
   .btn{
+    z-index: 1;
     padding: 11px 30px;
     @media (max-width: 750px){
       padding: 9px 30px;
@@ -27,6 +28,7 @@
   position: relative;
   max-width: 810px;
   margin: 0 auto;
+  white-space: nowrap;
   &  a,
   & span{
     position: relative;
@@ -97,6 +99,20 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    display: none;
+  }
+  &::before{
+    content: "";
+    max-width: 91px;
+    height: 65px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-image: url(../img/bell3.webp);
+    background-size: cover;
+    background-position: bottom;
   }
 
   @media (max-width: 750px){
@@ -112,6 +128,8 @@
     img{
       display: none;
     }
+
+    background-image: url(../img/bell3.webp);
   }
 }
 
