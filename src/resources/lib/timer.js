@@ -62,6 +62,17 @@ var timer = setInterval(function() {
 }, 1000);
 
 
+var how_many_seats = document.querySelectorAll('.how-many-seats');
+var seats = document.querySelector('.seats');
+
+how_many_seats.forEach(function (item) {
+  item.addEventListener("click", ({target}) => {
+    console.log(item);
+    seats.textContent = item.dataset.value;
+
+  });
+});
+
 
 
 

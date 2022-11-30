@@ -71,8 +71,20 @@
     fill: #0B212F;
   }
   p{
+    font-size: 16px;
     text-align: center;
-    margin-bottom: 0;
+    letter-spacing: -0.01em;
+    color: #0B212F;
+    font-weight: 600;
+    background: #EDF7FF;
+    border-radius: 100px;
+    max-width: 174px;
+    width: 100%;
+    min-height: 38px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 .day-active__title{
@@ -103,6 +115,13 @@
   }
   .day-content{
     display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    @media (max-width: 991px){
+      height: inherit;
+    }
   }
 
 
