@@ -104,10 +104,12 @@
   letter-spacing: -0.01em;
 
   color: #0B212F;
-  display: flex;
+  display: none;
   align-items: center;
 }
-
+.day-active__time--visible{
+  display: flex;
+}
 
 .day-active{
   .day-expectation{

@@ -41,6 +41,45 @@ if(trim(!empty($_POST['flexRadioDefault']))){
     $body.='<p><strong>Есть коньки?:</strong> '.$_POST['flexRadioDefault'].'</p>';
 }
 if(trim(!empty($_POST['drone']))){
+
+  $servername = "localhost";
+  $username = "e91713b6_1111111";
+  $password = "PaUBnp7%";
+  $dbname = "e91713b6_1111111";
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  $result = mysqli_query($conn, "SELECT * FROM `how_many_seats`" );
+
+  $chislo = 8;
+
+  while($goods = mysqli_fetch_assoc( $result)){
+      //echo $goods['seats'];
+     if($goods['id'] == 1){
+      if('4 декабря 10:00 – 10:45' == $_POST['drone']){
+        $chislo  =  $goods['seats'];
+        $chislo--;
+        $conn->query("UPDATE `how_many_seats` SET `seats` = '$chislo' WHERE `id` = '1' ");
+      }
+     }
+     if($goods['id'] == 2){
+
+      if('4 декабря 11:15 – 12:00' == $_POST['drone']){
+        $chislo  =  $goods['seats'];
+
+        $chislo--;
+        $conn->query("UPDATE `how_many_seats` SET `seats` = '$chislo' WHERE `id` = '2' ");
+      }
+
+      }
+      if($goods['id'] == 3){
+          /*$chislo  =  $goods['seats'];
+          $chislo--;*/
+      }
+  }
+
+
+  $conn->close();
+
   $body.='<p><strong>Время?: </strong> '.$_POST['drone'].'</p>';
 }
 

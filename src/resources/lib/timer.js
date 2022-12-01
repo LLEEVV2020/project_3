@@ -1,5 +1,7 @@
 var endDate = new Date(2022, 11, 5, 12, 0, 0, 0).getTime();
 var endDateArr = [
+  new Date(2022, 11, 1, 11, 0, 0, 0).getTime(),  // 1 декабря 2022 года
+  new Date(2022, 11, 2, 11, 0, 0, 0).getTime(),  // 2 декабря 2022 года
   new Date(2022, 11, 5, 12, 0, 0, 0).getTime(),  // 5 декабря 2022 года
   new Date(2022, 11, 12, 12, 0, 0, 0).getTime(), // 12 декабря 2022 года
   new Date(2022, 11, 19, 12, 0, 0, 0).getTime(),  // 19 декабря 2022 года
@@ -67,8 +69,13 @@ var seats = document.querySelector('.seats');
 
 how_many_seats.forEach(function (item) {
   item.addEventListener("click", ({target}) => {
-    console.log(item);
+    //console.log(item);
     seats.textContent = item.dataset.value;
+
+    //seats.innerHTML = active__time_visible.dataset.value;
+    let mesto_text = document.querySelector('.mesto');
+    let mesto = createLabel(Number(item.dataset.value), ['место', 'места', 'мест']);
+    mesto_text.innerHTML = mesto;
 
   });
 });
@@ -98,7 +105,13 @@ function formReadyClick (btn) {
 
         e.preventDefault(); // запрет на отправку стандартной формы
 
-        formSendAsync(btn);
+      if(btn.classList.contains('soobshit-o-nachale')){
+          formSendAsync(btn);
+      }
+      if(btn.classList.contains('zapisatsa')){
+          formSendAsync(btn);
+      }
+
     }
 }
 
@@ -123,9 +136,6 @@ async function formSendAsync(btn_child){
             let result = await response.json();
 
 
-
-
-
             form.reset();
             form.classList.remove('_sending');
 
@@ -144,9 +154,7 @@ async function formSendAsync(btn_child){
               $(".modal1").addClass("modalBG-active");
             }
 
-
-
-
+            VizovStart();
 
             return true;
 
@@ -174,16 +182,9 @@ function formMainSend() {
 
         let modals = document.querySelectorAll('.modal-wrapper > .modal');
 
-
-
         for (let modal of modals) {
             modal.classList.remove("active-modal");
         }
-        //document.querySelector('.modal-thanks').classList.add("active-modal");
-
-       // panel.classList.toggle('no-scroll');
-       // modal.classList.add('modal-wrapper--open'); // добавляем этот класс .modal-wrapper--open для оберток всех модалок тогда окно откроется
-
 }
 
 // проверка на ошибки
@@ -299,7 +300,7 @@ formPreview2.addEventListener('keydown', function(event) {
     alert('Отменить!')
   }
 
-  if(this.value.replace(/[\+\(\)\s]/g,"").length >= 12){
+  if(this.value.replace(/[\+\(\)\s]/g,"").length >= 11){
 
     let zapisatsa  = document.querySelector('.zapisatsa ');
 
@@ -310,4 +311,120 @@ formPreview2.addEventListener('keydown', function(event) {
 });
 
 
+/*(async () => {
+  try {
+    await fetch('https://putin-centre.ru');
+  } catch(err) {
+    alert(err); // Failed to fetch
+  }
+})()*/
 
+/*let response = fetch("https://putin-centre.ru", {
+  mode: 'no-cors',
+  headers: {
+    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+  },
+}).then(resp => {
+  return resp.text()
+})
+.then(resBody => {
+  console.log(resBody)
+});
+*/
+
+
+
+
+function VizovStart(){
+
+
+
+
+  getElement('https://pro-dex.ru/1.php', '.question-hyperlink1', function(element) {
+    //console.log(element);
+    let zapisatsa  = document.querySelector('.seats-10-00');
+    zapisatsa.dataset.value = element.innerHTML;
+
+
+
+  });
+
+  getElement('https://pro-dex.ru/1.php', '.question-hyperlink2', function(element) {
+      //console.log(element.innerHTML);
+      let zapisatsa  = document.querySelector('.seats-11-15');
+      zapisatsa.dataset.value = element.innerHTML;
+  });
+
+  getElement('https://pro-dex.ru/1.php', '.question-hyperlink3', function(element) {
+    console.log(element);
+  });
+
+  function getElement(url, selector, c) {
+      request(new XMLHttpRequest());
+
+      function request(xhr) {
+          xhr.open('GET', '' + url, true);
+          xhr.send();
+          xhr.onreadystatechange = function() {
+              if(xhr.readyState == 4) {
+                  if(xhr.status == 200) {
+                      html = document.createElement('div');
+                      html.innerHTML = xhr.responseText;
+                      c(html.querySelector(selector));
+                  }
+              }
+          }
+      }
+  }
+
+
+  function Vizov() {
+
+    /** Проверка на наличие мест */
+    var how_seatsis = document.querySelectorAll('.how-many-seats');
+
+    how_seatsis.forEach(function (item) {
+
+      if(Number(item.dataset.value) < 1){
+        item.removeAttribute('checked');
+        let parent = item.closest('.day-active__time');
+        parent.classList.remove("day-active__time--visible");
+      }
+
+    });
+
+    let active__time_visible = document.querySelector('.day-active__time--visible input');
+    if(active__time_visible !== null){
+      active__time_visible.checked = true;
+      let seats  = document.querySelector('.seats');
+      seats.innerHTML = active__time_visible.dataset.value;
+
+      //createLabel(Number(active__time_visible.dataset.value), ['место', 'места', 'мест']);
+
+      let mesto_text = document.querySelector('.mesto');
+      let mesto = createLabel(Number(active__time_visible.dataset.value), ['место', 'места', 'мест']);
+      mesto_text.innerHTML = mesto;
+
+    }
+
+
+
+    var how_seatsis = document.querySelectorAll('.day-active__time--visible');
+    if(how_seatsis.length == 0){
+
+      let section3 = document.querySelector('.section3');
+      section3.classList.add("section3__form-none");
+    }
+
+  }
+
+  setTimeout(Vizov, 500);
+
+
+}
+VizovStart();
+
+
+
+
+//$('#q').load('https://putin-centre.ru body');

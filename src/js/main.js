@@ -245,12 +245,6 @@ $(document).ready(function() {
       }
     });
 
-
-
-
-
-
-
   });
 
 
