@@ -19,6 +19,11 @@ $mail->addAddress('info@мосрембыт.рус', 'Лев');
 // тема письма
 $mail->Subject = 'Данные с '.$_SERVER['SERVER_NAME'];
 
+$servername = "localhost";
+$username = "e91713b6_1111111";
+$password = "PaUBnp7%";
+$dbname = "e91713b6_1111111";
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 
 $body = '<h2 style="margin-top: 0;">Форма с сайта"'.$_SERVER['SERVER_NAME'].'"</h2>';
@@ -29,10 +34,16 @@ if(trim(!empty($_POST['user-name']))){
 
 if(trim(!empty($_POST['user-email']))){
     $body.='<p><strong>Емайл:</strong> '.$_POST['user-email'].'</p>';
+    $user_email = $_POST['user-email'];
+
+    $conn->query("INSERT INTO mails (mail) VALUES ('$user_email')");
 }
 
 if(trim(!empty($_POST['user-phone']))){
     $body.='<p><strong>Телефон:</strong> '.$_POST['user-phone'].'</p>';
+    $user_phone = $_POST['user-phone'];
+
+    $conn->query("INSERT INTO phones (phone) VALUES ('$user_phone')");
 }
 if(trim(!empty($_POST['user-message']))){
     $body.='<p><strong>Сообщение:</strong> '.$_POST['user-message'].'</p>';
@@ -42,11 +53,6 @@ if(trim(!empty($_POST['flexRadioDefault']))){
 }
 if(trim(!empty($_POST['drone']))){
 
-  $servername = "localhost";
-  $username = "e91713b6_1111111";
-  $password = "PaUBnp7%";
-  $dbname = "e91713b6_1111111";
-  $conn = new mysqli($servername, $username, $password, $dbname);
 
   $result = mysqli_query($conn, "SELECT * FROM `how_many_seats`" );
 
@@ -68,14 +74,25 @@ if(trim(!empty($_POST['drone']))){
 
         $chislo--;
         $conn->query("UPDATE `how_many_seats` SET `seats` = '$chislo' WHERE `id` = '2' ");
-      }
 
       }
-      if($goods['id'] == 3){
+    }
+    if($goods['id'] == 3){
           /*$chislo  =  $goods['seats'];
           $chislo--;*/
-      }
+    }
+      //$conn->query("INSERT INFO `seats` (`seats`) VALUE ('')");
+      //VALUES ('$name1')";
   }
+
+
+
+ // INSERT INTO `phones` (`id`, `phone`) VALUES (NULL, '55656776');
+
+  //$result = mysqli_query($conn, "SELECT * FROM `how_many_seats`" );
+ // $conn->query("INSERT INFO `phones` (`id`, `phone`) VALUE ('2', '577656776')");
+
+
 
 
   $conn->close();

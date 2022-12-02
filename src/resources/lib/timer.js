@@ -1,22 +1,41 @@
 var endDate = new Date(2022, 11, 5, 12, 0, 0, 0).getTime();
 var endDateArr = [
-  new Date(2022, 11, 1, 11, 0, 0, 0).getTime(),  // 1 декабря 2022 года
   new Date(2022, 11, 2, 11, 0, 0, 0).getTime(),  // 2 декабря 2022 года
   new Date(2022, 11, 5, 12, 0, 0, 0).getTime(),  // 5 декабря 2022 года
+  new Date(2022, 11, 6, 12, 0, 0, 0).getTime(),  // 6 декабря 2022 года
+  new Date(2022, 11, 7, 12, 0, 0, 0).getTime(),  // 7 декабря 2022 года
+  new Date(2022, 11, 8, 12, 0, 0, 0).getTime(),  // 8 декабря 2022 года
+  new Date(2022, 11, 9, 12, 0, 0, 0).getTime(),  // 9 декабря 2022 года
   new Date(2022, 11, 12, 12, 0, 0, 0).getTime(), // 12 декабря 2022 года
+  new Date(2022, 11, 13, 12, 0, 0, 0).getTime(), // 13 декабря 2022 года
+  new Date(2022, 11, 14, 12, 0, 0, 0).getTime(), // 14 декабря 2022 года
+  new Date(2022, 11, 15, 12, 0, 0, 0).getTime(), // 15 декабря 2022 года
+  new Date(2022, 11, 16, 12, 0, 0, 0).getTime(), // 16 декабря 2022 года
   new Date(2022, 11, 19, 12, 0, 0, 0).getTime(),  // 19 декабря 2022 года
+  new Date(2022, 11, 20, 12, 0, 0, 0).getTime(),  // 20 декабря 2022 года
+  new Date(2022, 11, 21, 12, 0, 0, 0).getTime(),  // 21 декабря 2022 года
+  new Date(2022, 11, 22, 12, 0, 0, 0).getTime(),  // 22 декабря 2022 года
+  new Date(2022, 11, 23, 12, 0, 0, 0).getTime(),  // 23 декабря 2022 года
   new Date(2022, 11, 26, 12, 0, 0, 0).getTime(), // 26 декабря 2022 года
-  new Date(2023, 0, 2, 12, 0, 0, 0).getTime() // 2 января 2023 года
+  new Date(2022, 11, 27, 12, 0, 0, 0).getTime(), // 27 декабря 2022 года
+  new Date(2022, 11, 28, 12, 0, 0, 0).getTime(), // 28 декабря 2022 года
+  new Date(2022, 11, 29, 12, 0, 0, 0).getTime(), // 29 декабря 2022 года
+  new Date(2022, 11, 30, 12, 0, 0, 0).getTime(), // 30 декабря 2022 года
+  //new Date(2023, 0, 2, 12, 0, 0, 0).getTime(), // 2 января 2023 года
+  //new Date(2023, 0, 3, 12, 0, 0, 0).getTime(), // 3 января 2023 года
+ // new Date(2023, 0, 4, 12, 0, 0, 0).getTime(), // 4 января 2023 года
+  //new Date(2023, 0, 5, 12, 0, 0, 0).getTime(), // 5 января 2023 года
+  new Date(2023, 0, 6, 12, 0, 0, 0).getTime() // 6 января 2023 года
 ];
 
 function createLabel(number, titles) {
   const cases = [2, 0, 1, 1, 1, 2];
   return `${titles[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]]}`;
 }
-
+let indexArr = 0;
 var timer = setInterval(function() {
   let now = new Date().getTime();
-  let indexArr = 0;
+
   let t = endDateArr[indexArr] - now;
 
   if (t < 0) {
@@ -109,7 +128,74 @@ function formReadyClick (btn) {
           formSendAsync(btn);
       }
       if(btn.classList.contains('zapisatsa')){
-          formSendAsync(btn);
+
+        let flag_povtorenie_tel_mail = false;
+
+        getElement('https://pro-dex.ru/1.php', '.phones-mails', function(elements) {
+          let idsection3 = btn.closest("#idsection3");
+
+          var phone_click = idsection3.querySelector('.phone_click');
+
+          var phones = elements.querySelector('.phones');
+
+          for (let element of phones.children) {
+
+            if(phone_click.value === element.innerHTML){
+              $(".modal4").addClass("modalBG-active");
+
+              flag_povtorenie_tel_mail = true;
+            }
+
+           }
+
+
+          var phone_click = idsection3.querySelector('._email');
+          var mails = elements.querySelector('.mails');
+
+          for (let element of mails.children) {
+
+            console.log(phone_click.value);
+            console.log(element.innerHTML);
+
+            if(phone_click.value === element.innerHTML){
+              $(".modal4").addClass("modalBG-active");
+
+              flag_povtorenie_tel_mail = true;
+            }
+
+           }
+
+          if(!flag_povtorenie_tel_mail){
+            formSendAsync(btn);
+          }
+
+        });
+
+
+        /*getElement('https://pro-dex.ru/1.php', '.mails', function(elements) {
+          let idsection3 = btn.closest("#idsection3");
+          var phone_click = idsection3.querySelector('._email');
+
+          for (let element of elements.children) {
+
+            console.log(phone_click.value);
+            console.log(element.innerHTML);
+
+            if(phone_click.value === element.innerHTML){
+              $(".modal4").addClass("modalBG-active");
+
+              flag_povtorenie_tel_mail = true;
+            }
+
+           }
+
+          if(!flag_povtorenie_tel_mail){
+            formSendAsync(btn);
+          }
+
+        });*/
+
+
       }
 
     }
@@ -223,6 +309,9 @@ function formValidate(form){
     }
     return error;
 }
+
+
+
 // добавляют родители и элементу класс _error
 function formAddError(input){
     input.parentElement.classList.add('_error');
@@ -284,16 +373,6 @@ function uploadFile(file){
 }
 
 const formPreview2 = document.querySelector('.phone_click');
-/*
-formPreview2.addEventListener( "focus" , function() {
-  if(this.value.replace(/[\+\(\)\s]/g,"").length >= 12){
-
-    let zapisatsa  = document.querySelector('.zapisatsa ');
-
-    zapisatsa.classList.add('btn__active');
-
-  }
-});*/
 
 formPreview2.addEventListener('keydown', function(event) {
   if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
@@ -311,42 +390,33 @@ formPreview2.addEventListener('keydown', function(event) {
 });
 
 
-/*(async () => {
-  try {
-    await fetch('https://putin-centre.ru');
-  } catch(err) {
-    alert(err); // Failed to fetch
+
+function getElement(url, selector, c) {
+  request(new XMLHttpRequest());
+
+  function request(xhr) {
+      xhr.open('GET', '' + url, true);
+      xhr.send();
+      xhr.onreadystatechange = function() {
+          if(xhr.readyState == 4) {
+              if(xhr.status == 200) {
+                  html = document.createElement('div');
+                  html.innerHTML = xhr.responseText;
+                  c(html.querySelector(selector));
+              }
+          }
+      }
   }
-})()*/
-
-/*let response = fetch("https://putin-centre.ru", {
-  mode: 'no-cors',
-  headers: {
-    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-  },
-}).then(resp => {
-  return resp.text()
-})
-.then(resBody => {
-  console.log(resBody)
-});
-*/
-
-
+}
 
 
 function VizovStart(){
-
-
 
 
   getElement('https://pro-dex.ru/1.php', '.question-hyperlink1', function(element) {
     //console.log(element);
     let zapisatsa  = document.querySelector('.seats-10-00');
     zapisatsa.dataset.value = element.innerHTML;
-
-
-
   });
 
   getElement('https://pro-dex.ru/1.php', '.question-hyperlink2', function(element) {
@@ -359,23 +429,7 @@ function VizovStart(){
     console.log(element);
   });
 
-  function getElement(url, selector, c) {
-      request(new XMLHttpRequest());
 
-      function request(xhr) {
-          xhr.open('GET', '' + url, true);
-          xhr.send();
-          xhr.onreadystatechange = function() {
-              if(xhr.readyState == 4) {
-                  if(xhr.status == 200) {
-                      html = document.createElement('div');
-                      html.innerHTML = xhr.responseText;
-                      c(html.querySelector(selector));
-                  }
-              }
-          }
-      }
-  }
 
 
   function Vizov() {
@@ -422,7 +476,14 @@ function VizovStart(){
 
 
 }
-VizovStart();
+
+$(document).ready(function(){
+
+  VizovStart();
+
+});
+
+
 
 
 

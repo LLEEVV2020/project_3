@@ -19,6 +19,12 @@
     .container {
       max-width: 350px;
     }
+    h3{
+      margin-top: 0;
+    }
+    p{
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -61,19 +67,43 @@
 
 //echo $_POST['data3'];
 
+
+
+
+  $result = mysqli_query($conn, "SELECT * FROM `how_many_seats`" );
+
+
+
+  while($goods = mysqli_fetch_assoc( $result)){
+    //echo $goods['seats'];
+
+    if($goods['id'] == 1){
+      $good1 = $goods['seats'];
+    }
+    if($goods['id'] == 2){
+      $good2 = $goods['seats'];
+    }
+    if($goods['id'] == 3){
+      $good3 = $goods['seats'];
+    }
+  }
+
+
   $conn->close();
-
-
   ?>
+
+
 
   <div class="container">
     <form action="administrator.php" method="post">
       <div>
-        <h3>4 декабря 10:00 – 10:45 <br>
+        <p>Осталось <span style="color: red;"><?php echo $good1; ?></span> мест</p>
+        <h3 >4 декабря 10:00 – 10:45 <br>
         <input type="number" name="data1">
         </h3>
       </div>
       <div>
+      <p>Осталось <span style="color: red;"><?php echo $good2; ?> </span> мест</p>
         <h3>4 декабря 11:15 – 12:00<br>
         <input type="number" name="data2">
         </h3>
