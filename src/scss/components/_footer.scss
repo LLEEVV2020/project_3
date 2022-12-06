@@ -259,3 +259,47 @@ white-space: nowrap;
     }
   }
 }
+
+
+.reg-active{
+  .day-top{
+    .p{
+      display: block;
+    }
+    .day-content{
+      display: none;
+    }
+
+  }
+
+}
+
+
+.start-reg{
+  .registration{
+    display: none;
+  }
+
+  .reg-active{
+    .day-top{
+      .p{
+        display: none;
+      }
+      .day-content{
+        display: flex;
+      }
+
+    }
+    .section3__day{
+      &:first-child{
+        .section3__lock{
+          display: none;
+        }
+      }
+    }
+  }
+  .section3__form{
+    display: flex;
+  }
+}
+
