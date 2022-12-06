@@ -110,6 +110,14 @@
 .day-active__time--visible{
   display: flex;
 }
+.none-mest{
+  display: block;
+  color: red;
+  font-weight: 700;
+}
+.day-active__time--visible ~ .none-mest{
+  display: none;
+}
 
 .day-active{
   .day-expectation{

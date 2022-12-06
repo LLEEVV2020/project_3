@@ -472,7 +472,7 @@ function VizovStart(){
 
   }
 
-  setTimeout(Vizov, 500);
+  setTimeout(Vizov, 650);
 
 
 }
