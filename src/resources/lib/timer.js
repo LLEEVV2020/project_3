@@ -462,12 +462,14 @@ function VizovStart(){
     }
 
 
-
     var how_seatsis = document.querySelectorAll('.day-active__time--visible');
     if(how_seatsis.length == 0){
 
       let section3 = document.querySelector('.section3__form');
       section3.classList.add("section3__form-none");
+
+      let section3_form_none = document.querySelector('.section3__form-none');
+      section3_form_none.style.display = "none";
     }
 
   }
