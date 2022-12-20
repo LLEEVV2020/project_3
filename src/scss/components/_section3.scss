@@ -176,6 +176,14 @@
 
   position: relative;
 }
+.section3__day-none{
+  opacity: 0.4;
+  .section3__lock{
+    display: none;
+  }
+
+}
+
 .section3__number{
   font-size: 22px;
 }

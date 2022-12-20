@@ -293,8 +293,8 @@ white-space: nowrap;
       }
 
     }
-    .section3__day{
-      &:first-child{
+    .section3__day-none {
+      & + .section3__day{
         .section3__lock{
           display: none;
         }

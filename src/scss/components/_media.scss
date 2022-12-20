@@ -110,6 +110,7 @@
   }
   .block h2, .thirdHeader{
     font-size: 30px;
+
   }
   .section3__days{
     justify-content: center;
@@ -118,7 +119,20 @@
     margin-bottom: 30px;
   }
 }
-
+@media (max-width: 500px) {
+  .secondHeader{
+    text-align: left;
+    span{
+      white-space: normal !important;
+    }
+    br{
+      display: none;
+    }
+  }
+  .headParagraph{
+    text-align: left ;
+  }
+}
 
 .fixed {
   position: fixed;
