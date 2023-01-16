@@ -47,38 +47,17 @@
 var endDate = new Date(2022, 11, 5, 12, 0, 0, 0).getTime();
 var endDateArr = [
 
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 11, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 12, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 13, 11, 0, 0, 0).getTime(),
-new Date(2023, 0, 14, 11, 0, 0, 0).getTime(),
-
- new Date(2023, 0, 16, 11, 0, 0, 0).getTime(),  // 19 декабря 2022 года
  new Date(2023, 0, 17, 11, 0, 0, 0).getTime(),  // 19 декабря 2022 года
+ new Date(2023, 0, 18, 11, 0, 0, 0).getTime(),  // 19 декабря 2022 года
+ new Date(2023, 0, 19, 11, 0, 0, 0).getTime(),  // 19 декабря 2022 года
+ new Date(2023, 0, 20, 11, 0, 0, 0).getTime(),  // 19 декабря 2022 года
 
 
-  new Date(2022, 0, 22, 11, 0, 0, 0).getTime(), // 30 декабря 2022 года
-  new Date(2023, 0, 29, 11, 0, 0, 0).getTime() // 6 января 2023 года
+  new Date(2022, 0, 23, 11, 0, 0, 0).getTime(), // 30 декабря 2022 года
+  new Date(2023, 0, 24, 11, 0, 0, 0).getTime(), // 6 января 2023 года
+  new Date(2023, 0, 25, 11, 0, 0, 0).getTime(), // 6 января 2023 года
+  new Date(2023, 0, 26, 11, 0, 0, 0).getTime(), // 6 января 2023 года
+  new Date(2023, 0, 27, 11, 0, 0, 0).getTime()  // 6 января 2023 года
 ];
 //var endDateArr = [];
 //endDateArr.push(new Date(2023, 0, 16, 11, 0, 0, 0).getTime());
@@ -94,13 +73,11 @@ var timer = setInterval(function() {
   let now = new Date().getTime();
 
   let t = endDateArr[indexArr] - now;
-  while (t < 0) { // выводит 0, затем 1, затем 2
 
-    t = endDateArr[indexArr] - now;
-    indexArr++;
+  if (t < 0) {
+      indexArr++;
+      t = endDateArr[indexArr] - now;
   }
-
-
 
   if (t >= 0) {
 
@@ -140,5 +117,11 @@ var timer = setInterval(function() {
   }
 
 }, 1000);
+  /*while (t < 0) {
+
+    t = endDateArr[indexArr] - now;
+    indexArr++;
+  }*/
+
 
 </script>
