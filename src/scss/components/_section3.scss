@@ -443,26 +443,27 @@ align-items: center;
     overflow: inherit;
     background-position-y: 17px;
     z-index: 10;
-  }
 
-  .section-close{
-    display: block;
-    background: #EDF3F8;
-    border-radius: 50%;
-    width:  34px;
-    height: 34px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    background-image: url(../img/svg/closebtn.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 3;
-    &:hover{
-      opacity: .6;
+    .section-close{
+      display: block;
+      background: #EDF3F8;
+      border-radius: 50%;
+      width:  34px;
+      height: 34px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+      background-image: url(../img/svg/closebtn.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 3;
+      &:hover{
+        opacity: .6;
+      }
     }
   }
+
 
 
   .container{
