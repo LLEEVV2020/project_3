@@ -238,6 +238,33 @@
 
 <div class="section-banner">
   <div class="container">
-ggg
+    <div class="section-banner-text"></div>
+    <p>и другие ценные призы</p>
+    <img class="medvedeva-banner" src="img/medvedeva-banner.png" alt="">
+    <img class="section-banner-gift" src="img/section-banner-gift.png" alt="">
+
+    <img class="section-banner-vetka" src="img/section-banner-vetka.png" alt="">
+
+    <a target="_blank" href="https://paket5ka.ru/?utm_source=offline_btl&utm_medium=marketing&utm_campaign=x5_tm-promo-5ka_paket5ka_brand_katok&utm_content=tm-promo-5ka_katok-web_full-price" class="btn">Получить подарки!</a>
+    <div class="section-banner-botton"></div>
+    <div class="section-close"></div>
   </div>
 </div>
+<script>
+  let section_close = document.querySelector('.section-close');
+
+
+  section_close.addEventListener("click", function() {
+   // console.log(this);
+    //this.style.display = 'none';
+    closest_this = this.closest('.section-banner');
+    closest_this.style.display = 'none';
+  });
+
+  setTimeout(function(){
+	  let section_banner = document.querySelector('.section-banner');
+    section_banner.style.display = 'block';
+  }, 10000);
+
+</script>
+<!--<div class="hhhh"></div>-->
